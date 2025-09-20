@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class CasinoSyncWorldMixin {
     @Inject(at=@At("HEAD"),method = "syncData",cancellable = true,remap = false)
     public void sync(LevelAccessor world, CallbackInfo ci) {
+        // Don't laugh. Nevermind, do laugh :)
         if (RandomSource.create().nextFloat() < Nomoonpatch.PACKET_DROP_CHANCE)
             ci.cancel();
     }
