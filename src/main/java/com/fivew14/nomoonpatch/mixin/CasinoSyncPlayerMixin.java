@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class CasinoSyncPlayerMixin {
     @Inject(at=@At("HEAD"),method = "syncPlayerVariables",cancellable = true,remap = false)
     public void sync(Entity entity, CallbackInfo ci) {
-        if (Nomoonpatch.shouldDropPacket())
+        if (RandomSource.create().nextFloat() < Nomoonpatch.PACKET_DROP_CHANCE)
             ci.cancel();
     }
 }
