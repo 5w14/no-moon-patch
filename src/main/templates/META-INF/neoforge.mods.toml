@@ -29,6 +29,6 @@ side = "BOTH"
 [[dependencies."${mod_id}"]]
 modId = "no_moon"
 type = "required"
-versionRange = "[${no_moon_version})"
+versionRange = "[${no_moon_version},)"
 ordering = "BEFORE"
 side = "BOTH"
