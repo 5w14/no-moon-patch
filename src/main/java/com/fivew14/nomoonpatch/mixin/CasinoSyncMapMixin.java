@@ -1,5 +1,6 @@
 package com.fivew14.nomoonpatch.mixin;
 
+import com.fivew14.nomoonpatch.Nomoonpatch;
 import net.mcreator.nomoon.network.NoMoonModVariables;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
@@ -12,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class CasinoSyncMapMixin {
     @Inject(at=@At("HEAD"),method = "syncData",cancellable = true,remap = false)
     public void sync(LevelAccessor world, CallbackInfo ci) {
-        if (RandomSource.create().nextFloat() > 1/8f) // Don't laugh. Nvm, do laugh:)
+        if (Nomoonpatch.shouldDropPacket())
             ci.cancel();
     }
 }
