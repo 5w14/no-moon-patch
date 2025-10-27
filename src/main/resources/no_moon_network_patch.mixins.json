@@ -8,6 +8,7 @@
     "CasinoSyncMapMixin",
     "CasinoSyncPlayerMixin",
     "CasinoSyncWorldMixin",
+    "EntityTickProcedureMixin",
     "dedicatedFixes.PlayerTickProcedureMixin"
   ],
   "client": [

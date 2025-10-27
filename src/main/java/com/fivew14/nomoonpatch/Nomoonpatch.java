@@ -18,15 +18,21 @@ public class Nomoonpatch {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    public static boolean entityMixinSkipExpensiveCalls = false;
+
     public static boolean mapSynced = false;
     public static ConcurrentSkipListSet<UUID> playerSynced = new ConcurrentSkipListSet<>();
     public static ConcurrentSkipListSet<ResourceLocation> dimensionSynced = new ConcurrentSkipListSet<>();
+
 
     @SubscribeEvent
     public void onTick(TickEvent.ServerTickEvent event) {
         if (event.phase != TickEvent.Phase.END || event.type != TickEvent.Type.SERVER) {
             return;
         }
+
+        entityMixinSkipExpensiveCalls =
+                event.getServer().getTickCount() % 5 != 0;
 
         mapSynced = false;
         playerSynced.clear();
