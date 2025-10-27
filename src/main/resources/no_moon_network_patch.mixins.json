@@ -5,9 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "no_moon_network_patch.refmap.json",
   "mixins": [
-    "CasinoSyncMapMixin",
-    "CasinoSyncPlayerMixin",
-    "CasinoSyncWorldMixin",
+    "MapSyncMixin",
+    "PlayerSyncMixin",
+    "WorldSyncMixin",
     "EntityTickProcedureMixin",
     "dedicatedFixes.PlayerTickProcedureMixin"
   ],

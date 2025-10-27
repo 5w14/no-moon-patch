@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(NoMoonModVariables.PlayerVariables.class)
-public class CasinoSyncPlayerMixin {
+public class PlayerSyncMixin {
     @Inject(at=@At("HEAD"),method = "syncPlayerVariables",cancellable = true,remap = false)
     public void sync(Entity entity, CallbackInfo ci) {
         if (!(entity instanceof ServerPlayer p)) return;

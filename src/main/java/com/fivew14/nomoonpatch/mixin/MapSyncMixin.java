@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(NoMoonModVariables.MapVariables.class)
-public class CasinoSyncMapMixin {
+public class MapSyncMixin {
     @Inject(at=@At("HEAD"),method = "syncData",cancellable = true,remap = false)
     public void sync(LevelAccessor world, CallbackInfo ci) {
         if (Nomoonpatch.mapSynced) {

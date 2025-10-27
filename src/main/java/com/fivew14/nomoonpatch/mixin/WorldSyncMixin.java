@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(NoMoonModVariables.WorldVariables.class)
-public class CasinoSyncWorldMixin {
+public class WorldSyncMixin {
     @Inject(at=@At("HEAD"),method = "syncData",cancellable = true,remap = false)
     public void sync(LevelAccessor world, CallbackInfo ci) {
         if (!(world instanceof Level level)) return;
